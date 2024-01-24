@@ -8,7 +8,7 @@ with open("students.csv") as file:
 
 # But if we want to sort out by the student's name:
 # 1st way where we will use a Python feature:
-# Python allows you to pass functions as arguments into other functions.
+# PYTHON FEATURE: Python allows you to pass functions as arguments into other functions.
 
 students = []           #empty list
 
@@ -16,7 +16,7 @@ with open("students.csv") as file:
     for line in file:
         name, house = line.rstrip().split(",")
         student = {"name": name, "house": house}        #dictionary with "name" as key and "house" as value
-        students.append(student)            #appending one student at a time as a dictionary in the students' list
+        students.append(student)                        #appending one student at a time as a dictionary in the students' list
 
 
 # Created solely for returning the value of the key name which is called by the sorted function to sort
