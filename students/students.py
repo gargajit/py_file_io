@@ -29,5 +29,7 @@ def get_house(student):
    return student['house']
 
 # Using the above Python feature, we can pass get_name function as an argument to the below sorted function as the key
+# Here notice that the get_name or get_house if written is not called using paranthesis
+# but passed only as name so that the sorted function can call that sorted function for the user.
 for student in sorted(students, key=get_name):
   print(f"{student['name']} is in {student['house']}")
