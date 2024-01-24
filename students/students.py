@@ -25,5 +25,5 @@ def get_house(student):
    return student['house']
 
 # Using above Python feature, we can pass get_name function as argument to below sorted function as key
-for student in sorted(students, key=get_house, reverse=True):
+for student in sorted(students, key=get_house):
   print(f"{student['name']} is in {student['house']}")
