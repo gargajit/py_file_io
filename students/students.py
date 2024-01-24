@@ -19,26 +19,33 @@ with open("students.csv") as file:
         students.append(student)                        #appending one student at a time as a dictionary in the students' list
 
 
-# Created solely for returning the value of the key name which is called by the sorted function to sort
+# Temp function: Created solely for returning the value of the key name which is called by the sorted function to sort
 def get_name(student):
   return student['name']
 
 
-# Created solely for returning the value of the key house which is called by the sorted function to sort
+# Temp function: Created solely for returning the value of the key house which is called by the sorted function to sort
 def get_house(student):
    return student['house']
 
 # Using the above Python feature, we can pass get_name function as an argument to the below sorted function as the key
-# Here notice that the get_name or get_house if written is not called using paranthesis
-# but passed only as name so that the sorted function can call that sorted function for the user.
+# Here notice that the get_name or get_house if written is not called using parenthesis
+# but passed only as the name so that the sorted function can call that sorted function for the user.
 '''
 for student in sorted(students, key=get_name):
   print(f"{student['name']} is in {student['house']}")
 '''
 
 
-# and since this temp function get_name or get_house is just used once we dont need to define any function name
-# we can make the code compact by getting rid of the function and rather use concept of lambda
+'''
+If you are defining something and immediately using it but never, once again, need the name of that function, 
+like get_name or get_house, we can further tighten the above code.
+
+Get rid of the function we defined, and in sorted function, instead of passing `key`, the name of a function, 
+we can pass the key to what is called the `lambda` function.
+
+`lambda` is an anonymous function.
+'''
   
 for student in sorted(students, key=lambda student: student['name']):
   print(f"{student['name']} is in {student['house']}")
