@@ -31,5 +31,14 @@ def get_house(student):
 # Using the above Python feature, we can pass get_name function as an argument to the below sorted function as the key
 # Here notice that the get_name or get_house if written is not called using paranthesis
 # but passed only as name so that the sorted function can call that sorted function for the user.
+'''
 for student in sorted(students, key=get_name):
+  print(f"{student['name']} is in {student['house']}")
+'''
+
+
+# and since this temp function get_name or get_house is just used once we dont need to define any function name
+# we can make the code compact by getting rid of the function and rather use concept of lambda
+  
+for student in sorted(students, key=lambda student: student['name']):
   print(f"{student['name']} is in {student['house']}")
